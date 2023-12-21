@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee List</title>
+  <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Employee List</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Project ID</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="employee : ${employees}">
+    <td th:text="${employee.EmplId}"></td>
+    <td th:text="${employee.ProjectId}"></td>
+    <td th:text="${employee.StartDate}"></td>
+    <td th:text="${employee.EndDate}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
